@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SuperAuto Sport | Catálogo de Viaturas</title>
+  <meta name="description" content="Pesquise automóveis disponíveis na SuperAuto Sport por marca, segmento, transmissão, combustível, ano e preço.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="cabecalho" id="cabecalho"></header>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="contentor catalogo" style="padding-top:2rem;">
+      <details class="filtros" id="seccao-filtros" open>
+        <summary>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          Opções de pesquisa
+        </summary>
+        <form id="filtros" action="catalogo.html" method="get">
+          <div class="filtros__campos">
+            <div class="campo">
+              <label for="f-q">Pesquisa livre</label>
+              <input id="f-q" name="q" type="search" maxlength="60" autocomplete="off" placeholder="Marca, modelo ou versão">
+            </div>
+            <div class="campo">
+              <label for="f-marca">Marca</label>
+              <select id="f-marca" name="marca">
+                <option value="">Todas as marcas</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="f-segmento">Segmento</label>
+              <select id="f-segmento" name="segmento">
+                <option value="">Todos os segmentos</option>
+              </select>
+            </div>
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="f-combustivel">Combustível</label>
+                <select id="f-combustivel" name="combustivel">
+                  <option value="">Todos</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="f-caixa">Transmissão</label>
+                <select id="f-caixa" name="caixa">
+                  <option value="">Todas</option>
+                </select>
+              </div>
+            </div>
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="f-preco-min">Preço mín. (€)</label>
+                <input id="f-preco-min" name="preco_min" type="number" min="0" step="500" inputmode="numeric">
+              </div>
+              <div class="campo">
+                <label for="f-preco-max">Preço máx. (€)</label>
+                <input id="f-preco-max" name="preco_max" type="number" min="0" step="500" inputmode="numeric">
+              </div>
+            </div>
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="f-ano-min">Ano mín.</label>
+                <input id="f-ano-min" name="ano_min" type="number" min="1950" max="2100" step="1" inputmode="numeric">
+              </div>
+              <div class="campo">
+                <label for="f-ano-max">Ano máx.</label>
+                <input id="f-ano-max" name="ano_max" type="number" min="1950" max="2100" step="1" inputmode="numeric">
+              </div>
+            </div>
+            <div class="campo">
+              <label for="f-km-max">Quilometragem máx. (km)</label>
+              <input id="f-km-max" name="km_max" type="number" min="0" step="1000" inputmode="numeric">
+            </div>
+            <div class="campo campo--caixa">
+              <input type="checkbox" id="f-iva" name="iva_dedutivel" value="true">
+              <label for="f-iva">Apenas com IVA dedutível</label>
+            </div>
+            <input type="hidden" id="f-estado" name="estado" value="">
+            <div class="filtros__acoes">
+              <button class="botao botao--primario" type="submit">Aplicar filtros</button>
+              <a class="ligacao" href="catalogo.html">Limpar filtros</a>
+            </div>
+          </div>
+        </form>
+      </details>
+
+      <section aria-label="Resultados">
+        <div class="catalogo-abas-estado" id="abas-estado" role="tablist" aria-label="Filtrar viaturas por disponibilidade">
+          <button class="catalogo-aba-btn ativo" type="button" data-estado="">Todas as Viaturas</button>
+          <button class="catalogo-aba-btn" type="button" data-estado="disponivel">Disponíveis em Stock</button>
+          <button class="catalogo-aba-btn" type="button" data-estado="vendida">Viaturas Vendidas</button>
+        </div>
+
+        <div class="resultados__cabeca">
+          <div class="resultados__titulo-grupo">
+            <h1>Viaturas</h1>
+            <p id="contagem" role="status" aria-live="polite"></p>
+          </div>
+          <div class="resultados__ordenar">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar" name="ordenar" form="filtros"></select>
+          </div>
+        </div>
+        <div class="grelha-viaturas" id="resultados"></div>
+        <div class="resultados__mais">
+          <button class="botao botao--contorno" type="button" id="mostrar-mais" hidden>Mostrar mais viaturas</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape sobre-escuro" id="rodape"></footer>
+  <script type="module" src="js/pages/catalogo.js"></script>
+</body>
+</html>

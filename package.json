@@ -1,0 +1,11 @@
+{
+  "name": "stand-automovel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website de um stand de automóveis de médio-alto padrão (projeto final CTeSP, ISTEC Porto)",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "test": "node --test"
+  }
+}

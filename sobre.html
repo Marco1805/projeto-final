@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre nós | SuperAuto Sport</title>
+  <meta name="description" content="Saiba mais sobre o nosso stand: história, equipa e valores.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="cabecalho" id="cabecalho"></header>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="hero hero--pagina sobre-escuro" aria-labelledby="titulo-hero">
+      <div class="contentor hero__conteudo hero__conteudo--simples">
+        <div class="hero__texto">
+          <h1 id="titulo-hero">Sobre nós</h1>
+          <p class="hero__apresentacao" id="sobre-introducao"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao" id="seccao-valores" aria-labelledby="titulo-valores">
+      <div class="contentor">
+        <div class="seccao__cabeca">
+          <h2 id="titulo-valores">Os nossos pilares</h2>
+        </div>
+        <div class="valores-grelha" id="sobre-valores" aria-live="polite"></div>
+        <p class="nota-provisoria" id="sobre-nota"></p>
+      </div>
+    </section>
+
+    <section class="seccao" id="seccao-faq" aria-labelledby="titulo-faq" hidden>
+      <div class="contentor contentor--estreito">
+        <div class="seccao__cabeca">
+          <h2 id="titulo-faq">Perguntas frequentes</h2>
+        </div>
+        <div class="faq-lista" id="sobre-faq"></div>
+      </div>
+    </section>
+
+    <section class="seccao seccao--ctas" aria-labelledby="titulo-cta">
+      <div class="contentor">
+        <div class="cartao-cta cartao-cta--destaque">
+          <h2 id="titulo-cta">Pronto para encontrar a sua próxima viatura?</h2>
+          <p>Consulte o nosso catálogo completo de viaturas disponíveis ou entre em contacto connosco para um atendimento personalizado.</p>
+          <div class="acoes-grupo">
+            <a class="botao botao--primario" href="catalogo.html">Ver catálogo</a>
+            <a class="botao botao--contorno" href="contactos.html">Falar connosco</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape sobre-escuro" id="rodape"></footer>
+  <script type="module" src="js/pages/sobre.js"></script>
+</body>
+</html>

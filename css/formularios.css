@@ -1,0 +1,237 @@
+/* ==========================================================================
+   FORMULÁRIOS — CAMPOS, VALIDAÇÃO, CONFIRMAÇÕES E TABS
+   ========================================================================== */
+
+.formulario {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.campo textarea {
+  width: 100%;
+  min-height: 8rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--borda-media);
+  border-radius: var(--raio);
+  background: var(--bg-campo);
+  color: var(--texto-puro);
+  font: inherit;
+  resize: vertical;
+  transition: border-color var(--transicao-rapida), box-shadow var(--transicao-rapida), background-color var(--transicao-rapida);
+}
+
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px var(--acento-suave);
+  background-color: var(--bg-superficie);
+}
+
+.campo [aria-invalid="true"] {
+  border-color: var(--erro) !important;
+  box-shadow: 0 0 0 2px var(--erro-suave) !important;
+}
+
+.campo__erro {
+  color: #f87171;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.campo__ajuda {
+  color: var(--texto-secundario);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+/* Campo-armadilha contra robôs: invisível para pessoas */
+.campo--armadilha {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.formulario__resumo-erros {
+  padding: 1.15rem 1.35rem;
+  border: 1px solid var(--erro);
+  border-radius: var(--raio);
+  background: var(--erro-suave);
+  color: #fecaca;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.formulario__confirmacao {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+  padding: 2rem;
+  border: 1px solid var(--sucesso);
+  border-radius: var(--raio-lg);
+  background: var(--sucesso-suave);
+  color: var(--texto-principal);
+}
+
+.formulario__confirmacao h3 {
+  font-size: 1.4rem;
+  color: #34d399;
+}
+
+.formulario__confirmacao p {
+  color: var(--texto-principal);
+  line-height: 1.6;
+}
+
+/* ---------- Páginas de Formulários (Contactos & Retoma) ---------- */
+.contactos-pagina {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3.5rem;
+  padding-block: 2.5rem 2rem;
+  align-items: start;
+}
+
+.contactos-pagina__intro {
+  display: grid;
+  gap: 1.75rem;
+  color: var(--texto-secundario);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.contactos-pagina__intro p strong {
+  color: var(--texto-puro);
+}
+
+.cartao-formulario {
+  padding: 2.5rem;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda-media);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra);
+}
+
+.separadores {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.separador {
+  padding: 0.85rem 0.25rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--texto-secundario);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+.separador:hover {
+  color: var(--texto-puro);
+}
+
+.separador[aria-selected="true"] {
+  border-bottom-color: var(--acento);
+  color: var(--acento);
+  font-weight: 700;
+}
+
+@media (max-width: 58rem) {
+  .contactos-pagina {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .cartao-formulario {
+    padding: 1.5rem;
+  }
+}
+
+/* ---------- Avisos Temporários (Toasts) ---------- */
+.avisos {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 250;
+  display: grid;
+  gap: 0.75rem;
+  max-width: min(28rem, calc(100vw - 2rem));
+}
+
+.aviso {
+  margin: 0;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--raio);
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda-forte);
+  color: var(--texto-puro);
+  box-shadow: var(--sombra-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  animation: deslizar-cima 0.3s var(--transicao);
+}
+
+.aviso--erro {
+  background: #2d1215;
+  border-color: var(--erro);
+  color: #fca5a5;
+}
+
+@keyframes deslizar-cima {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ---------- Diálogo Modal de Confirmação ---------- */
+.dialogo {
+  width: min(30rem, calc(100vw - 2rem));
+  padding: 0;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-lg);
+  background: var(--bg-superficie);
+  color: var(--texto-principal);
+  box-shadow: var(--sombra-lg);
+}
+
+.dialogo::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.dialogo__corpo {
+  display: grid;
+  gap: 1.25rem;
+  padding: 2rem;
+}
+
+.dialogo__corpo h2 {
+  color: var(--texto-puro);
+  font-size: 1.4rem;
+}
+
+.dialogo__acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}

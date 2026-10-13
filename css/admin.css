@@ -1,0 +1,323 @@
+/* ==========================================================================
+   ADMINISTRAÇÃO — PAINEL, TABELAS, MÉTRICAS E GESTÃO
+   ========================================================================== */
+
+.admin {
+  padding-block: 2.5rem 2rem;
+}
+
+.admin__cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.admin__cabeca h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  letter-spacing: -0.015em;
+  color: var(--texto-puro);
+}
+
+.admin__utilizador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9375rem;
+  color: var(--texto-secundario);
+  background: var(--bg-superficie);
+  padding: 0.4rem 0.5rem 0.4rem 1rem;
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio-full);
+}
+
+.admin__navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.admin__navegacao a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--texto-secundario);
+  transition: color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+.admin__navegacao a:hover {
+  color: var(--texto-puro);
+}
+
+.admin__navegacao a[aria-current="page"] {
+  border-bottom-color: var(--acento);
+  color: var(--acento);
+  font-weight: 700;
+}
+
+.admin__navegacao .etiqueta {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  background: var(--acento-suave);
+  border-color: var(--acento);
+  color: var(--acento-hover);
+}
+
+/* Login de Administração */
+.admin-login {
+  max-width: 28rem;
+  margin: 4rem auto 3rem;
+  padding: 2.5rem;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda-media);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-lg);
+}
+
+.admin-login h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--texto-puro);
+  letter-spacing: -0.015em;
+}
+
+/* Métricas do Resumo */
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.75rem;
+  margin: 0;
+}
+
+.resumo div {
+  padding: 1.75rem;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-sm);
+  transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.resumo div:hover {
+  transform: translateY(-3px);
+  border-color: rgba(207, 163, 88, 0.4);
+}
+
+.resumo dt {
+  color: var(--texto-secundario);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.resumo dd {
+  margin: 0.5rem 0 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--acento);
+  font-stretch: 112%;
+}
+
+.resumo a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--texto-secundario);
+  text-decoration: none;
+  transition: color var(--transicao-rapida);
+}
+
+.resumo a:hover {
+  color: var(--acento);
+}
+
+/* Barra de Ferramentas / Filtros Admin */
+.barra-ferramentas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.barra-ferramentas .campo {
+  min-width: 14rem;
+}
+
+.barra-ferramentas__espaco {
+  flex: 1;
+}
+
+/* Tabelas Administrativas */
+.tabela-envolvente {
+  overflow-x: auto;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.tabela th,
+.tabela td {
+  padding: 0.9rem 1.15rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.tabela th {
+  background: #0f131a;
+  color: var(--texto-secundario);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tabela tbody tr {
+  transition: background-color var(--transicao-rapida);
+}
+
+.tabela tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.tabela tr:last-child td {
+  border-bottom: 0;
+}
+
+.tabela select {
+  min-height: 2.25rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--borda-media);
+  border-radius: var(--raio);
+  background: var(--bg-campo);
+  color: var(--texto-puro);
+  font: inherit;
+}
+
+.tabela select:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+.tabela input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--acento);
+  cursor: pointer;
+}
+
+.tabela__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.tabela__mensagem {
+  max-width: 28rem;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+.tabela__secundario {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  margin-top: 0.2rem;
+}
+
+/* Formulário de Viatura */
+.form-viatura {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 56rem;
+}
+
+.form-viatura fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem 1.5rem;
+  margin: 0;
+  padding: 1.75rem;
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio-lg);
+  background: var(--bg-superficie);
+  box-shadow: var(--sombra-sm);
+}
+
+.form-viatura legend {
+  padding: 0 0.65rem;
+  font-weight: 700;
+  font-stretch: 110%;
+  color: var(--acento);
+  font-size: 1.1rem;
+}
+
+.form-viatura .campo--larga {
+  grid-column: 1 / -1;
+}
+
+/* Fotografias da Viatura */
+.fotos-admin {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.foto-admin {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.75rem;
+  background: var(--bg-campo);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio);
+  transition: border-color var(--transicao-rapida);
+}
+
+.foto-admin:hover {
+  border-color: var(--borda-media);
+}
+
+.foto-admin img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--raio-sm);
+}
+
+.foto-admin__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.foto-admin--principal {
+  border-color: var(--acento);
+  box-shadow: 0 0 14px var(--acento-brilho);
+}

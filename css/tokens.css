@@ -1,0 +1,97 @@
+/* ==========================================================================
+   DESIGN TOKENS — STAND AUTOMÓVEL (DARK LUXURY THEME)
+   Identidade visual premium: Preto profundo, superfícies carvão,
+   tipografia nítida de alto contraste e acento elegante em bronze/ouro.
+   ========================================================================== */
+
+:root {
+  /* Cores de fundo (Profundidade e Camadas) */
+  --bg-base: #06080b;
+  --bg-principal: #0a0d12;
+  --bg-superficie: #121620;
+  --bg-elevado: #181e2b;
+  --bg-elevado-hover: #222a3a;
+  --bg-campo: #151a24;
+  --bg-vidro: rgba(10, 13, 18, 0.88);
+  --bg-vidro-cartao: rgba(18, 22, 32, 0.85);
+
+  /* Tipografia & Contraste Alto (Máxima Legibilidade) */
+  --texto-puro: #ffffff;
+  --texto-principal: #f8fafc;
+  --texto-secundario: #cbd5e1;
+  --texto-suave: #94a3b8;
+  --texto-inverso: #06080b;
+
+  /* Bordas e Divisores Nítidos */
+  --borda-suave: rgba(255, 255, 255, 0.12);
+  --borda-media: rgba(255, 255, 255, 0.22);
+  --borda-forte: rgba(255, 255, 255, 0.35);
+  --borda-acento: rgba(207, 163, 88, 0.55);
+
+  /* Cor de Destaque Elegante (Bronze / Ouro Champagne Automóvel) */
+  --acento: #cfa358;
+  --acento-hover: #e5be72;
+  --acento-ativo: #b88d44;
+  --acento-suave: rgba(207, 163, 88, 0.16);
+  --acento-brilho: rgba(207, 163, 88, 0.32);
+  --acento-gradiente: linear-gradient(135deg, #e5be72 0%, #b88d44 100%);
+  --acento-texto: #06080b;
+
+  /* Estados e Feedback com Alto Contraste */
+  --sucesso: #10b981;
+  --sucesso-suave: rgba(16, 185, 129, 0.18);
+  --aviso: #f59e0b;
+  --aviso-suave: rgba(245, 158, 11, 0.18);
+  --erro: #ef4444;
+  --erro-suave: rgba(239, 68, 68, 0.2);
+  --info: #38bdf8;
+  --info-suave: rgba(56, 189, 248, 0.18);
+
+  /* Aliases para compatibilidade total com o código existente */
+  --verde-corrida: var(--acento);
+  --verde-profundo: var(--bg-base);
+  --grafite: var(--texto-principal);
+  --nevoa: var(--bg-principal);
+  --papel: var(--bg-superficie);
+  --aco: var(--borda-suave);
+  --aco-escuro: var(--borda-media);
+  --bronze: var(--acento);
+  --bronze-claro: var(--acento-hover);
+
+  /* Tipografia */
+  --fonte: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --fonte-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Espaçamentos */
+  --espaco-2xs: 0.25rem;
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 0.75rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 1.5rem;
+  --espaco-xl: 2.25rem;
+  --espaco-2xl: 3.5rem;
+  --espaco-3xl: 5rem;
+
+  /* Arredondamento */
+  --raio-sm: 4px;
+  --raio: 8px;
+  --raio-lg: 14px;
+  --raio-xl: 20px;
+  --raio-full: 9999px;
+
+  /* Sombras e Iluminação */
+  --sombra-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --sombra: 0 8px 24px -4px rgba(0, 0, 0, 0.55);
+  --sombra-lg: 0 18px 45px -8px rgba(0, 0, 0, 0.75);
+  --sombra-acento: 0 6px 24px rgba(207, 163, 88, 0.25);
+  --brilho-suave: 0 0 25px rgba(207, 163, 88, 0.15);
+
+  /* Transições */
+  --transicao-rapida: 0.15s ease-out;
+  --transicao: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transicao-suave: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --largura: 78rem;
+  --largura-estreita: 56rem;
+}

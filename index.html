@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SuperAuto Sport | Automóveis de Gama Média-Alta Selecionados</title>
+  <meta name="description" content="Conheça a seleção de viaturas da SuperAuto Sport: garantia até 36 meses, retoma, financiamento e acompanhamento personalizado.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="cabecalho" id="cabecalho"></header>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="hero sobre-escuro" id="hero" aria-labelledby="titulo-hero">
+      <div class="contentor hero__conteudo">
+        <div class="hero__texto">
+          <h1 id="titulo-hero">Automóveis Selecionados com Garantia e Confiança</h1>
+          <p class="hero__apresentacao" id="hero-apresentacao"></p>
+          <div class="hero__acoes">
+            <a class="botao botao--primario" href="catalogo.html">Consultar Stock</a>
+            <a class="botao botao--contorno" href="retoma.html">Avaliar a Minha Viatura</a>
+          </div>
+        </div>
+
+        <form class="pesquisa-rapida" action="catalogo.html" method="get">
+          <h2>Pesquisa rápida de viaturas</h2>
+          <div class="campo">
+            <label for="pr-marca">Marca</label>
+            <select id="pr-marca" name="marca">
+              <option value="">Todas as marcas</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="pr-segmento">Segmento</label>
+            <select id="pr-segmento" name="segmento">
+              <option value="">Todos os segmentos</option>
+              <option value="suv">SUV</option>
+              <option value="sedan">Sedan / Berlina</option>
+              <option value="carrinha">Carrinha</option>
+              <option value="citadino">Citadino</option>
+              <option value="coupe">Coupé</option>
+              <option value="cabrio">Cabriolet</option>
+              <option value="monovolume">Monovolume</option>
+              <option value="utilitario">Utilitário</option>
+            </select>
+          </div>
+          <div class="campo-duplo">
+            <div class="campo">
+              <label for="pr-combustivel">Combustível</label>
+              <select id="pr-combustivel" name="combustivel">
+                <option value="">Todos</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="diesel">Diesel</option>
+                <option value="hibrido">Híbrido</option>
+                <option value="hibrido_plug_in">Plug-in</option>
+                <option value="eletrico">Elétrico</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="pr-caixa">Transmissão</label>
+              <select id="pr-caixa" name="caixa">
+                <option value="">Todas</option>
+                <option value="manual">Manual</option>
+                <option value="automatica">Automática</option>
+              </select>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="pr-preco">Preço até</label>
+            <select id="pr-preco" name="preco_max">
+              <option value="">Qualquer valor</option>
+              <option value="20000">20 000 €</option>
+              <option value="30000">30 000 €</option>
+              <option value="40000">40 000 €</option>
+              <option value="50000">50 000 €</option>
+              <option value="75000">75 000 €</option>
+              <option value="100000">100 000 €</option>
+            </select>
+          </div>
+          <button class="botao botao--primario" type="submit">Pesquisar Viaturas</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Segmentos de Viaturas -->
+    <section class="seccao seccao-segmentos" id="seccao-categorias" aria-labelledby="titulo-categorias">
+      <div class="contentor">
+        <h2 id="titulo-categorias" class="seccao-segmentos__titulo">Que segmento procura?</h2>
+        <div class="segmentos-carrossel">
+          <a class="cartao-segmento" href="catalogo.html?segmento=cabrio">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/cabrio.png" alt="Cabrio" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Cabrio</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=citadino">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/citadino.png" alt="Citadino" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Citadino</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=utilitario">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/comerciais.png" alt="Comerciais" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Comerciais</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=monovolume">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/monovolume.png" alt="Monovolume" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Monovolume</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=sedan">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/sedan.png" alt="Sedan" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Sedan</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=citadino">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/peq-citadino.png" alt="Peq. Citadino" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Peq. Citadino</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=carrinha">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/carrinha.png" alt="Carrinha" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Carrinha</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=suv">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/suv.png" alt="SUV" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">SUV</span>
+          </a>
+          <a class="cartao-segmento" href="catalogo.html?segmento=utilitario">
+            <div class="cartao-segmento__img-moldura">
+              <img src="assets/segmentos/utilitario.png" alt="Utilitário" width="90" height="60" loading="lazy">
+            </div>
+            <span class="cartao-segmento__nome">Utilitário</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Viaturas em Destaque -->
+    <section class="seccao seccao-destaques" id="seccao-destaques" aria-labelledby="titulo-destaques">
+      <div class="contentor">
+        <div class="seccao__cabeca">
+          <h2 id="titulo-destaques">Viaturas em destaque</h2>
+        </div>
+
+        <div class="carrossel-destaques-moldura">
+          <button class="carrossel-seta carrossel-seta--esq" id="destaques-ant" type="button" aria-label="Viatura anterior">‹</button>
+          <div class="carrossel-destaques-pista" id="destaques" aria-live="polite"></div>
+          <button class="carrossel-seta carrossel-seta--dir" id="destaques-prox" type="button" aria-label="Próxima viatura">›</button>
+        </div>
+
+        <div class="carrossel-controlo-barra">
+          <button class="carrossel-seta-texto" id="btn-seta-ant" type="button" aria-label="Anterior">←</button>
+          <div class="carrossel-pontos-lista" id="destaques-pontos"></div>
+          <button class="carrossel-seta-texto" id="btn-seta-prox" type="button" aria-label="Seguinte">→</button>
+        </div>
+
+        <div class="destaques-botao-wrapper">
+          <a class="botao botao--destaque-cta" id="btn-todas-viaturas" href="catalogo.html">
+            <span>Mostrar todas as viaturas</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os nossos serviços -->
+    <section class="seccao" id="seccao-servicos" aria-labelledby="titulo-servicos">
+      <div class="contentor">
+        <div class="seccao__cabeca seccao__cabeca--centro" style="text-align:center;margin-bottom:2.5rem;">
+          <h2 id="titulo-servicos" style="margin:0 0 0.5rem;">Os nossos serviços</h2>
+          <p class="seccao__subtitulo" style="max-width:38rem;margin:0 auto;color:var(--texto-secundario);">Soluções completas com transparência, garantia e excelência para que conduza com total tranquilidade.</p>
+        </div>
+        <div class="servicos-grelha">
+          <div class="servico-cartao">
+            <div class="servico-cartao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3>Financiamento Flexível</h3>
+            <p>Tratamos de todo o processo de financiamento com soluções ajustadas ao seu perfil, com ou sem entrada inicial e prazos até 120 meses.</p>
+          </div>
+          <div class="servico-cartao">
+            <div class="servico-cartao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Garantia Abrangente</h3>
+            <p>Todas as viaturas são entregues com garantia contratual até 36 meses e revisão técnica completa, para uma condução sem preocupações.</p>
+          </div>
+          <div class="servico-cartao">
+            <div class="servico-cartao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Avaliação Justa de Retoma</h3>
+            <p>Avaliamos o seu automóvel atual com rapidez e transparência. Utilize o valor como entrada para a compra do seu novo veículo.</p>
+            <a class="ligacao servico-cartao__cta" href="retoma.html">Pedir avaliação</a>
+          </div>
+          <div class="servico-cartao">
+            <div class="servico-cartao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Acompanhamento Dedicado</h3>
+            <p>Apoio comercial e técnico personalizado antes, durante e no pós-venda, garantindo total clareza em todas as etapas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destaque Institucional -->
+    <section class="seccao seccao--banner-sonho">
+      <div class="contentor">
+        <div class="cartao-cta cartao-cta--destaque" style="background:linear-gradient(135deg, rgba(20,24,32,0.95), rgba(12,15,20,0.98));border:1px solid var(--borda-media);padding:3rem 2.5rem;position:relative;overflow:hidden;">
+          <div class="cartao-cta__texto">
+            <h2 id="titulo-cta-final" style="font-size:clamp(1.75rem,3.2vw,2.4rem);margin-bottom:0.75rem;">Quer realizar o sonho do carro certo?</h2>
+            <p style="font-size:1.05rem;color:var(--texto-secundario);max-width:38rem;margin-bottom:1.5rem;">Na SuperAuto Sport ajudamos a escolher a viatura ideal com segurança, rapidez e acompanhamento à medida.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:1.25rem 2rem;margin-bottom:2rem;color:var(--texto-puro);font-weight:500;">
+              <span style="display:inline-flex;align-items:center;gap:0.5rem;"><span style="color:var(--acento);font-weight:700;">✓</span> Viaturas selecionadas e certificadas</span>
+              <span style="display:inline-flex;align-items:center;gap:0.5rem;"><span style="color:var(--acento);font-weight:700;">✓</span> Processo 100% transparente</span>
+              <span style="display:inline-flex;align-items:center;gap:0.5rem;"><span style="color:var(--acento);font-weight:700;">✓</span> Entrega rápida e garantia total</span>
+            </div>
+          </div>
+          <div class="cartao-cta__acoes" style="margin-top:0;">
+            <a class="botao botao--primario" href="contactos.html">Falar com a SuperAuto Sport</a>
+            <a class="botao botao--contorno" href="catalogo.html">Ver Todas as Viaturas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perguntas Frequentes -->
+    <section class="seccao" id="seccao-faq" aria-labelledby="titulo-faq">
+      <div class="contentor contentor--estreito">
+        <div class="seccao__cabeca">
+          <h2 id="titulo-faq">Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-lista">
+          <details class="faq-item" open>
+            <summary>Como funciona a compra de uma viatura com financiamento?</summary>
+            <p>Trabalhamos em parceria com instituições financeiras de referência para lhe apresentar as melhores taxas e condições. O processo é simples: recolhemos a documentação necessária, submetemos a proposta e acompanhamos a resposta com rapidez, com ou sem entrada inicial.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Posso entregar o meu automóvel atual como retoma?</summary>
+            <p>Sim. Aceitamos a sua viatura atual para retoma. Pode preencher o nosso formulário online de avaliação de retoma indicando os dados e fotografias do carro para obter uma estimativa inicial, que será confirmada no stand após inspeção presencial.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Qual a garantia incluída na aquisição da viatura?</summary>
+            <p>Todas as viaturas comercializadas pela SuperAuto Sport beneficiam de garantia contratual até 36 meses, cobrindo os principais componentes mecânicos e elétricos, em conformidade com a legislação em vigor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Que documentos são necessários para comprar um automóvel?</summary>
+            <p>Para compra a pronto pagamento é necessário o Cartão de Cidadão (ou Título de Residência) e comprovativo de morada. Para processos de financiamento são também solicitados os últimos recibos de vencimento, declaração de IRS e comprovativo de IBAN.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como é feita a verificação das viaturas antes da venda?</summary>
+            <p>Cada veículo é sujeito a um rigoroso protocolo de verificação de 120 pontos que inclui diagnóstico eletrónico, estado dos travões, suspensão, pneumáticos, fluidos, histórico de manutenção e preparação estética integral.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que os nossos clientes dizem sobre nós -->
+    <section class="seccao" id="seccao-testemunhos" aria-labelledby="titulo-testemunhos">
+      <div class="contentor">
+        <div class="seccao__cabeca">
+          <h2 id="titulo-testemunhos">O que os nossos clientes dizem sobre nós?</h2>
+        </div>
+        <div class="testemunhos-grelha">
+          <div class="cartao-testemunho">
+            <div class="cartao-testemunho__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <p class="cartao-testemunho__texto">"Processo de compra impecável, transparente do primeiro contacto à entrega da chave. A viatura estava rigorosamente como descrita e a garantia deu-me total tranquilidade."</p>
+            <div class="cartao-testemunho__autor">
+              <div class="cartao-testemunho__iniciais">MS</div>
+              <div class="cartao-testemunho__info">
+                <strong>Manuel Silva</strong>
+                <span>Cliente Verificado · há 2 semanas</span>
+              </div>
+            </div>
+          </div>
+          <div class="cartao-testemunho">
+            <div class="cartao-testemunho__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <p class="cartao-testemunho__texto">"A avaliação da minha retoma foi muito justa e o processo de financiamento foi tratado com rapidez exemplar. Equipa altamente profissional e disponível."</p>
+            <div class="cartao-testemunho__autor">
+              <div class="cartao-testemunho__iniciais">TC</div>
+              <div class="cartao-testemunho__info">
+                <strong>Teresa Cardoso</strong>
+                <span>Cliente Verificado · há 3 semanas</span>
+              </div>
+            </div>
+          </div>
+          <div class="cartao-testemunho">
+            <div class="cartao-testemunho__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <p class="cartao-testemunho__texto">"Excelente atendimento e apoio no pós-venda. Destaco a atenção ao detalhe e o estado imaculado em que a viatura me foi entregue."</p>
+            <div class="cartao-testemunho__autor">
+              <div class="cartao-testemunho__iniciais">RP</div>
+              <div class="cartao-testemunho__info">
+                <strong>Ricardo Pereira</strong>
+                <span>Cliente Verificado · há 1 mês</span>
+              </div>
+            </div>
+          </div>
+          <div class="cartao-testemunho">
+            <div class="cartao-testemunho__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <p class="cartao-testemunho__texto">"Comprar na SuperAuto Sport foi a melhor decisão. Transparência de princípio ao fim, viatura com livro de revisões e garantia de 18 meses."</p>
+            <div class="cartao-testemunho__autor">
+              <div class="cartao-testemunho__iniciais">AS</div>
+              <div class="cartao-testemunho__info">
+                <strong>António Santos</strong>
+                <span>Cliente Verificado · há 1 mês</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Onde estamos -->
+    <section class="seccao contactos-seccao" id="seccao-contactos" aria-labelledby="titulo-contactos">
+      <div class="contentor">
+        <div class="seccao__cabeca">
+          <div>
+            <h2 id="titulo-contactos">Onde estamos</h2>
+            <p class="seccao__subtitulo">Venha conhecer as nossas instalações e o nosso stock no Porto ou contacte diretamente a nossa equipa comercial.</p>
+          </div>
+        </div>
+        <div class="contactos-mapa-grelha">
+          <div class="contactos-cards">
+            <div class="cartao-info-contacto">
+              <div class="cartao-info-contacto__icone">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>Telefone Comercial</strong>
+                <a href="tel:+351918894947">918 894 947</a>
+              </div>
+            </div>
+            <div class="cartao-info-contacto">
+              <div class="cartao-info-contacto__icone">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:geral@superautosport.pt">geral@superautosport.pt</a>
+              </div>
+            </div>
+            <div class="cartao-info-contacto">
+              <div class="cartao-info-contacto__icone">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Morada</strong>
+                <span>Avenida Fontes Pereira de Melo, 4100-248 Porto</span>
+              </div>
+            </div>
+            <div class="cartao-info-contacto">
+              <div class="cartao-info-contacto__icone">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <strong>Horário</strong>
+                <span>Seg. – Sex.: 09:30 – 19:30 · Sáb.: 10:00 – 18:00</span>
+              </div>
+            </div>
+            <div class="contactos-cards__acoes">
+              <a class="botao botao--primario" href="https://maps.google.com/?q=Avenida+Fontes+Pereira+de+Melo+4100-248+Porto" target="_blank" rel="noopener">Obter direcções</a>
+              <a class="botao botao--contorno" href="https://wa.me/351918894947" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </div>
+          </div>
+          <div class="contactos-mapa-envolvente">
+            <iframe
+              title="Localização do Stand SuperAuto Sport no Porto"
+              src="https://maps.google.com/maps?q=Avenida+Fontes+Pereira+de+Melo,+4100-248+Porto&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              width="100%"
+              height="100%"
+              style="border:0; min-height: 340px; border-radius: var(--raio-lg);"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape sobre-escuro" id="rodape"></footer>
+  <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>

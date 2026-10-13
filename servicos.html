@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviços | SuperAuto Sport</title>
+  <meta name="description" content="Conheça os serviços disponíveis: financiamento, garantias, retoma, aconselhamento e muito mais.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="cabecalho" id="cabecalho"></header>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="hero hero--pagina sobre-escuro" aria-labelledby="titulo-hero">
+      <div class="contentor hero__conteudo hero__conteudo--simples">
+        <div class="hero__texto">
+          <h1 id="titulo-hero">Os nossos serviços</h1>
+          <p class="hero__apresentacao">Conheça as soluções que temos disponíveis para si, desde o financiamento à garantia e retoma da sua viatura.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao" id="seccao-servicos" aria-labelledby="titulo-servicos">
+      <div class="contentor">
+        <div class="seccao__cabeca">
+          <h2 id="titulo-servicos">Soluções completas para si</h2>
+        </div>
+        <div class="servicos-grelha" id="grelha-servicos" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="seccao seccao--ctas" aria-labelledby="titulo-ctas">
+      <div class="contentor">
+        <div class="seccao__cabeca so-leitores">
+          <h2 id="titulo-ctas">Próximos passos</h2>
+        </div>
+        <div class="ctas-duplas">
+          <div class="cartao-cta">
+            <div>
+              <h3>Precisa de aconselhamento?</h3>
+              <p>Fale diretamente com os nossos especialistas e esclareça todas as suas questões sobre viaturas ou financiamento.</p>
+              <div id="contactos-servicos"></div>
+            </div>
+            <a class="botao botao--primario" href="contactos.html">Contactar equipa</a>
+          </div>
+
+          <div class="cartao-cta">
+            <div>
+              <h3>Quer trocar de carro?</h3>
+              <p>Avaliamos a sua viatura atual com rigor e rapidez. Receba uma proposta de retoma justa e sem qualquer compromisso.</p>
+            </div>
+            <a class="botao botao--primario" href="retoma.html">Pedir avaliação de retoma</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape sobre-escuro" id="rodape"></footer>
+  <script type="module" src="js/pages/servicos.js"></script>
+</body>
+</html>

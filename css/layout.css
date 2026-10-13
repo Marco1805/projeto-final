@@ -1,0 +1,473 @@
+/* ==========================================================================
+   LAYOUT — CABEÇALHO, NAVEGAÇÃO, RODAPÉ E ELEMENTOS FIXOS
+   ========================================================================== */
+
+/* ---------- Cabeçalho Fixo / Glassmorphism ---------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-vidro);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--borda-suave);
+  transition: background-color var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+
+.cabecalho--scrolled {
+  background: rgba(9, 11, 15, 0.94);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom-color: var(--borda-media);
+}
+
+.cabecalho__linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.5rem;
+  padding-block: 0.5rem;
+}
+
+/* Marca / Logótipo */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-stretch: 115%;
+  font-size: 1.2rem;
+  letter-spacing: -0.015em;
+  color: var(--texto-puro);
+  transition: opacity var(--transicao-rapida);
+}
+
+.marca:hover {
+  opacity: 0.9;
+}
+
+.marca__simbolo {
+  flex: none;
+  color: var(--acento);
+  filter: drop-shadow(0 2px 8px rgba(207, 163, 88, 0.35));
+}
+
+.marca span {
+  white-space: nowrap;
+}
+
+/* Navegação Desktop */
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navegacao a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--raio);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--texto-secundario);
+  transition: color var(--transicao-rapida), background-color var(--transicao-rapida);
+}
+
+.navegacao a:hover {
+  color: var(--texto-puro);
+  background-color: var(--borda-suave);
+}
+
+.navegacao a[aria-current="page"] {
+  color: var(--acento);
+  background-color: var(--acento-suave);
+  font-weight: 600;
+}
+
+.cabecalho__acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.cabecalho__cta {
+  white-space: nowrap;
+}
+
+/* Botão Hambúrguer (Mobile) */
+.menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--borda-media);
+  border-radius: var(--raio);
+  color: var(--texto-principal);
+  cursor: pointer;
+  transition: background-color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+.menu-hamburguer:hover {
+  background-color: var(--bg-elevado);
+  border-color: var(--acento);
+  color: var(--texto-puro);
+}
+
+.menu-hamburguer__linha {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 1px;
+  transition: transform var(--transicao), opacity var(--transicao);
+}
+
+/* Gaveta de Navegação Mobile */
+.menu-movel {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility var(--transicao);
+}
+
+.menu-movel[aria-hidden="false"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu-movel__fundo {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity var(--transicao);
+}
+
+.menu-movel[aria-hidden="false"] .menu-movel__fundo {
+  opacity: 1;
+}
+
+.menu-movel__painel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100% - 3rem, 24rem);
+  background: var(--bg-superficie);
+  border-left: 1px solid var(--borda-media);
+  box-shadow: var(--sombra-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform var(--transicao);
+}
+
+.menu-movel[aria-hidden="false"] .menu-movel__painel {
+  transform: translateX(0);
+}
+
+.menu-movel__cabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.menu-movel__fechar {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--borda-media);
+  border-radius: var(--raio);
+  color: var(--texto-secundario);
+  cursor: pointer;
+}
+
+.menu-movel__fechar:hover {
+  color: var(--texto-puro);
+  border-color: var(--acento);
+}
+
+.menu-movel__nav ul {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-movel__nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-radius: var(--raio);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--texto-principal);
+  border: 1px solid transparent;
+  transition: background-color var(--transicao-rapida), color var(--transicao-rapida);
+}
+
+.menu-movel__nav a:hover {
+  background-color: var(--bg-elevado);
+  color: var(--texto-puro);
+}
+
+.menu-movel__nav a[aria-current="page"] {
+  background-color: var(--acento-suave);
+  color: var(--acento);
+  border-color: var(--borda-acento);
+  font-weight: 600;
+}
+
+.menu-movel__acoes {
+  margin-top: auto;
+  display: grid;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borda-suave);
+}
+
+@media (max-width: 62rem) {
+  .navegacao,
+  .cabecalho__cta {
+    display: none;
+  }
+
+  .menu-hamburguer {
+    display: flex;
+  }
+}
+
+/* ---------- Rodapé Premium ---------- */
+.rodape {
+  margin-top: 5rem;
+  background: var(--bg-base);
+  border-top: 1px solid var(--borda-suave);
+  color: var(--texto-secundario);
+  font-size: 0.9375rem;
+}
+
+.rodape__grelha {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 3.5rem 2.5rem;
+  padding-block: 4rem 2.75rem;
+}
+
+.rodape__selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--raio-full);
+  background: var(--bg-campo);
+  border: 1px solid var(--borda-suave);
+  font-size: 0.8125rem;
+  color: var(--texto-secundario);
+}
+
+.rodape__selo-ponto {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--raio-full);
+  background: var(--acento);
+  box-shadow: 0 0 8px var(--acento-brilho);
+  flex-shrink: 0;
+}
+
+.rodape h2 {
+  margin-bottom: 1.25rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-puro);
+  font-weight: 700;
+}
+
+.rodape .marca {
+  margin-bottom: 1rem;
+}
+
+.rodape p {
+  line-height: 1.6;
+  color: var(--texto-secundario);
+}
+
+.rodape ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.rodape a {
+  color: var(--texto-secundario);
+  transition: color var(--transicao-rapida);
+}
+
+.rodape a:hover {
+  color: var(--acento);
+}
+
+.rodape__vantagens {
+  display: grid;
+  gap: 1rem;
+}
+
+.rodape__vantagem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.rodape__vantagem-icone {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--raio-full);
+  background: var(--acento-suave);
+  color: var(--acento);
+}
+
+.contactos-lista {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contactos-lista li {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.contactos-lista__titulo {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--texto-suave);
+}
+
+.contactos-lista a {
+  color: var(--texto-principal);
+}
+
+.contactos-lista a:hover {
+  color: var(--acento);
+}
+
+.rodape__fim {
+  border-top: 1px solid var(--borda-suave);
+  padding-block: 1.5rem;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+.rodape__fim-linha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rodape__fim-linha a {
+  color: var(--texto-suave);
+}
+
+.rodape__fim-linha a:hover {
+  color: var(--texto-principal);
+}
+
+@media (max-width: 64rem) {
+  .rodape__grelha {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 38rem) {
+  .rodape__grelha {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 3rem 2rem;
+  }
+}
+
+/* ---------- Botão Flutuante WhatsApp ---------- */
+.whatsapp-flutuante {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--raio-full);
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transition: transform var(--transicao), box-shadow var(--transicao), background-color var(--transicao-rapida);
+  text-decoration: none;
+}
+
+.whatsapp-flutuante:hover,
+.whatsapp-flutuante:focus-visible {
+  background: #2ee572;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-flutuante svg {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+
+@media (max-width: 36rem) {
+  .whatsapp-flutuante {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+
+  .whatsapp-flutuante svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
